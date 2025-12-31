@@ -41,15 +41,11 @@ chest_xray/
     └── PNEUMONIA/
 ```
 
-
-markdown
-Copy code
+## Dataset Details
 
 - Grayscale chest X-ray images  
-- Images resized to **224 × 224**
+- Images resized to **224 × 224**  
 - Used for **binary classification**
-
----
 
 ## 🏗 Model Architecture
 - Convolutional layers with **ReLU activation**
