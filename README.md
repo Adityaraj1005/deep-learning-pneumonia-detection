@@ -31,13 +31,16 @@ This is a widely used and well-known dataset for pneumonia detection using CNNs.
 ## 🧠 Dataset Description
 The dataset is organized as follows:
 
+```text
 chest_xray/
 ├── train/
-│ ├── NORMAL/
-│ └── PNEUMONIA/
+│   ├── NORMAL/
+│   └── PNEUMONIA/
 └── test/
-├── NORMAL/
-└── PNEUMONIA/
+    ├── NORMAL/
+    └── PNEUMONIA/
+```
+
 
 markdown
 Copy code
