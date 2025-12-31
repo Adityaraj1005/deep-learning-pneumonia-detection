@@ -1,7 +1,16 @@
+# 🩺 Pneumonia Detection Using Deep Learning (CNN)
+
+Pneumonia is a serious respiratory infection that affects millions of people worldwide and can be life-threatening if not diagnosed early.
+
+This project uses **Convolutional Neural Networks (CNNs)** to automatically detect **Pneumonia from chest X-ray images**, helping in faster and more reliable diagnosis using **deep learning**.
+
+The model classifies chest X-ray images into two categories:
+
 - **NORMAL**
 - **PNEUMONIA**
 
-This project demonstrates the application of deep learning techniques in **medical image classification** using **TensorFlow and Keras**.
+This project demonstrates the application of **deep learning techniques in medical image classification** using **TensorFlow and Keras**.
+
 
 ---
 
