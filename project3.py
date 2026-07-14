@@ -75,7 +75,7 @@ cnn.compile(
 val_datagen = ImageDataGenerator(rescale=1./255)
 
 validation_set = val_datagen.flow_from_directory(
-    r"C:\Users\LENOVO\Downloads\archive (1)\chest_xray\train",
+    r"C:\Users\LENOVO\Downloads\archive (1)\chest_xray\val",
     target_size=(224, 224),
     batch_size=32,
     class_mode='binary',
@@ -95,7 +95,7 @@ cnn.fit(
 test_datagen = ImageDataGenerator(rescale=1./255)
 
 test_set = test_datagen.flow_from_directory(
-    r"C:\Users\LENOVO\Downloads\archive (1)\chest_xray\train",
+    r"C:\Users\LENOVO\Downloads\archive (1)\chest_xray\test",
     target_size=(224, 224),
     batch_size=32,
     class_mode='binary',
