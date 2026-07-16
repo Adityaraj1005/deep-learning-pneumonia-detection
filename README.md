@@ -89,9 +89,16 @@ chest_xray/
 
 The CNN model was trained for **10 epochs** using grayscale images and data augmentation.
 
+### 🔹 Handling Class Imbalance
+The dataset is imbalanced (Pneumonia: 3,875 vs Normal: 1,341 in training). 
+Added class weighting (`class_weight='balanced'`) to give the minority 
+class more influence during training. Did not yet validate this with a 
+confusion matrix due to a data-generator shuffling issue affecting 
+label alignment — a good next step for this project.
+
 ### 🔹 Training & Validation Performance
-- Training accuracy improved from **~78.99% to ~92.91%**
-- Validation accuracy fluctuated between **~62.5% and ~81.25%**
+- Training accuracy improved from **~72.62% to ~91.70%**
+- Validation accuracy fluctuated between **~68.75% and ~87.50%**
 - Loss consistently decreased on training data, indicating stable learning
 
 > **Note on validation accuracy:** The official Kaggle validation set
@@ -101,8 +108,8 @@ The CNN model was trained for **10 epochs** using grayscale images and data augm
 > the tiny validation set size, not a sign of unstable training.
 
 ### 🔹 Final Test Performance
-- **Test Accuracy:** 90.71%
-- **Test Loss:** 0.2890
+- **Test Accuracy:** 86.86%
+- **Test Loss:** 0.3078
 
 ### 🔹 Class Mapping
 ```python
@@ -119,7 +126,7 @@ The CNN model was trained for **10 epochs** using grayscale images and data augm
 - Data augmentation improved robustness
 - A simple binary CNN architecture proved effective for medical image classification
 
-📌 **Overall Test Accuracy: ~90.71%** (evaluated on a held-out test set of 624 unseen images)
+📌 **Overall Test Accuracy: ~86.86%** (evaluated on a held-out test set of 624 unseen images)
 
 ---
 
@@ -173,7 +180,7 @@ Each epoch took several minutes due to:
 ### 5️⃣ Validation/Test Data Leakage
 Initially, the validation and test generators both pointed to the `train/` folder by mistake, so the originally reported ~93% accuracy actually reflected training-set performance, not true generalization.
 
-**Solution:** Corrected the paths so validation uses `val/` (16 images) and test uses `test/` (624 images). The real, held-out test accuracy is **90.71%**.
+**Solution:** Corrected the paths so validation uses `val/` (16 images) and test uses `test/` (624 images). The real, held-out test accuracy is **86.86%**.
 
 ---
 
