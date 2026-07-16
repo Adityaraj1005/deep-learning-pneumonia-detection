@@ -82,11 +82,26 @@ validation_set = val_datagen.flow_from_directory(
     color_mode='grayscale'
 )
 
+# ===================== CLASS WEIGHTS (handle imbalance) =====================
+from sklearn.utils.class_weight import compute_class_weight
+
+labels = training_set.classes   # true label for every training image, e.g. [0,1,1,0,1,...]
+
+class_weights = compute_class_weight(
+    class_weight='balanced',
+    classes=np.unique(labels),
+    y=labels
+)
+
+class_weight_dict = dict(enumerate(class_weights))
+print("Class weights:", class_weight_dict)
+
 # ===================== TRAIN MODEL =====================
 cnn.fit(
     training_set,
     validation_data=validation_set,
-    epochs=10
+    epochs=10,
+    class_weight=class_weight_dict
 )
 
 # ===================== TEST DATA =====================
@@ -135,3 +150,4 @@ print(training_set.class_indices)  # {'NORMAL': 0, 'PNEUMONIA': 1}
 # Convert prediction to readable label
 prediction = 'pneumonia' if result[0][0] > 0.5 else 'normal'
 print("Prediction:", prediction)
+
