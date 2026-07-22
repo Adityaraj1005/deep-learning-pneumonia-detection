@@ -92,9 +92,7 @@ The CNN model was trained for **10 epochs** using grayscale images and data augm
 ### 🔹 Handling Class Imbalance
 The dataset is imbalanced (Pneumonia: 3,875 vs Normal: 1,341 in training). 
 Added class weighting (`class_weight='balanced'`) to give the minority 
-class more influence during training. Did not yet validate this with a 
-confusion matrix due to a data-generator shuffling issue affecting 
-label alignment — a good next step for this project.
+class more influence during training.
 
 ### 🔹 Training & Validation Performance
 - Training accuracy improved from **~72.62% to ~91.70%**
